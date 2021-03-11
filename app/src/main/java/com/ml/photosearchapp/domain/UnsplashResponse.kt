@@ -2,7 +2,9 @@ package com.ml.photosearchapp.domain
 
 import com.google.gson.annotations.SerializedName
 
-data class UnsplashResponse (
-	@SerializedName("photo") val photo : Photo,
-	@SerializedName("user") val user : User
+data class UnsplashResponse(
+
+	@SerializedName("total") val total: Int,
+	@SerializedName("total_pages") val total_pages: Int,
+	@SerializedName("results") val results: List<Results>
 )
