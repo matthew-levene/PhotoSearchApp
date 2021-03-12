@@ -2,4 +2,5 @@
     <string name="app_name">PhotoSearchApp</string>
     <string name="no_internet_connectivity_text">No internet connectivity</string>
     <string name="retry_text">Retry</string>
+    <string name="search_text">Search</string>
 </resources>
