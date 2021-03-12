@@ -22,4 +22,14 @@ class UnsplashRepository @Inject constructor(
           ),
             pagingSourceFactory = { PhotoPagingSource(query, photoApi) }
         ).liveData
+
+    fun fetchPhotosByAuthor(username: String) =
+        Pager(
+            PagingConfig(
+                pageSize = 50,
+                prefetchDistance = 20,
+                enablePlaceholders = false,
+            ),
+            pagingSourceFactory = { AuthoredPhotoPagingSource(username, photoApi) }
+        ).liveData
 }
