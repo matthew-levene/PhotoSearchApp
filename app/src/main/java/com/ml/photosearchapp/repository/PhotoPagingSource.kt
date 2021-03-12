@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 private const val INITIAL_LOAD_KEY = 1
 
-class UnsplashPagingSource(
+class PhotoPagingSource(
     private val query: String,
     private val photoApi: PhotoApi
 ) : PagingSource<Int, Results>() {

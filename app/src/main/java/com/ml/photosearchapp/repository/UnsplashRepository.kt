@@ -20,6 +20,6 @@ class UnsplashRepository @Inject constructor(
               prefetchDistance = 20,
               enablePlaceholders = false,
           ),
-            pagingSourceFactory = { UnsplashPagingSource(query, photoApi) }
+            pagingSourceFactory = { PhotoPagingSource(query, photoApi) }
         ).liveData
 }
