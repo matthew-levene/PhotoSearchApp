@@ -4,7 +4,7 @@ PhotoSearchApp is a simple Android application that allows users to search and r
 ![Alt text](app/docs/images/search_screenshot.png?raw=true "Search Screen Screenshot") ![Alt text](app/docs/images/details_screenshot_1.png?raw=true "Details Screen Screenshot 1") ![Alt text](app/docs/images/details_screenshot_2.png?raw=true "Details Screen Screenshot 2")
 
 # Software Development Approach
-This software was developed using a Kanban approach
+This software was developed using a Kanban approach.
 
 # Architecture Design
 The Project follows a MVVM with Repository pattern architecture. This architecture was chosen for:
