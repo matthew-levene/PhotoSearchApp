@@ -11,6 +11,7 @@ import com.ml.photosearchapp.R
 import com.ml.photosearchapp.databinding.FragmentGalleryBinding
 import com.ml.photosearchapp.domain.Results
 import com.ml.photosearchapp.ui.gallery.adapter.GalleryAdapter
+import com.ml.photosearchapp.ui.gallery.adapter.ReloadErrorAdapter
 import com.ml.photosearchapp.ui.gallery.viewmodel.GalleryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -48,6 +49,10 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
     private fun setupRecyclerView() {
         galleryAdapter = GalleryAdapter { navigateToDetails(it) }
         binding.galleryRecyclerView.adapter = galleryAdapter
+            .withLoadStateHeaderAndFooter(
+                ReloadErrorAdapter { galleryAdapter.retry() },
+                ReloadErrorAdapter { galleryAdapter.retry() }
+            )
     }
 
     private fun setupObserver() {
