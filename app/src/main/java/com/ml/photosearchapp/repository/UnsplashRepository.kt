@@ -4,8 +4,11 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.ml.photosearchapp.network.PhotoApi
+import timber.log.Timber
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class UnsplashRepository @Inject constructor(
     private val photoApi: PhotoApi
 ) {
