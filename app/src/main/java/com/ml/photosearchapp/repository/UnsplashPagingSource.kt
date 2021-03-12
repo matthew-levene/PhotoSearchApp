@@ -7,6 +7,7 @@ import com.ml.photosearchapp.domain.UnsplashResponse
 import com.ml.photosearchapp.network.PhotoApi
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Singleton
 
 private const val INITIAL_LOAD_KEY = 1
 
@@ -16,17 +17,18 @@ class UnsplashPagingSource(
 ) : PagingSource<Int, Results>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Results> {
         return try {
+            val position = params.key ?: INITIAL_LOAD_KEY
 
             val response = photoApi.getPhotos(
                 query,
-                page = params.key ?: INITIAL_LOAD_KEY,
+                page = position,
                 perPage = params.loadSize
             )
 
             LoadResult.Page(
                 data = response.results,
-                prevKey = if (params.key == INITIAL_LOAD_KEY) null else params.key?.minus(1),
-                nextKey = if (response.results.isEmpty()) null else params.key?.plus(1)
+                prevKey = if (position == INITIAL_LOAD_KEY) null else position - 1,
+                nextKey = if (response.results.isEmpty()) null else position + 1
             )
         } catch (exception: IOException) {
             LoadResult.Error(exception)
