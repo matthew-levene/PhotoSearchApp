@@ -14,7 +14,7 @@ interface PhotoApi {
 
     @Headers("Authorization: Client-ID ${BuildConfig.ACCESS_KEY}")
     @GET("search/photos")
-    fun getPhotos(
+    suspend fun getPhotos(
             @Query("query") query: String,
             @Query("page") page: Int,
             @Query("per_page") perPage: Int
