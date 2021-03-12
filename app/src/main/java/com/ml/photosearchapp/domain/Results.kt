@@ -1,9 +1,9 @@
 package com.ml.photosearchapp.domain
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Results(
-
 	@SerializedName("id") val id: String,
 	@SerializedName("created_at") val created_at: String,
 	@SerializedName("width") val width: Int,
@@ -17,4 +17,4 @@ data class Results(
 	@SerializedName("current_user_collections") val current_user_collections: List<String>,
 	@SerializedName("urls") val urls: Urls,
 	@SerializedName("links") val links: Links
-)
+) : Serializable

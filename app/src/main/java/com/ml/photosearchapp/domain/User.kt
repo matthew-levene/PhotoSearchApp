@@ -1,6 +1,7 @@
 package com.ml.photosearchapp.domain
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class User(
 
@@ -12,6 +13,6 @@ data class User(
     @SerializedName("instagram_username") val instagram_username: String,
     @SerializedName("twitter_username") val twitter_username: String,
     @SerializedName("portfolio_url") val portfolio_url: String,
-    @SerializedName("profile_image") val profile_image: Profile_image,
+    @SerializedName("profile_image") val profile_image: ProfileImage,
     @SerializedName("links") val links: Links
-)
+) : Serializable

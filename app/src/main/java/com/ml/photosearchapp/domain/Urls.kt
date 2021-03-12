@@ -1,6 +1,7 @@
 package com.ml.photosearchapp.domain
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class Urls(
@@ -10,4 +11,4 @@ data class Urls(
 	@SerializedName("regular") val regular: String,
 	@SerializedName("small") val small: String,
 	@SerializedName("thumb") val thumb: String
-)
+) : Serializable
