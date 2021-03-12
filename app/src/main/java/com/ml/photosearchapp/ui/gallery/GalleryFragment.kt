@@ -7,6 +7,7 @@ import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.ml.photosearchapp.R
 import com.ml.photosearchapp.databinding.FragmentGalleryBinding
 import com.ml.photosearchapp.domain.Results
@@ -86,7 +87,9 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
     }
 
     private fun navigateToDetails(results: Results) {
-
+        findNavController().navigate(
+            GalleryFragmentDirections.toDetailsFragment(results)
+        )
     }
 
 }

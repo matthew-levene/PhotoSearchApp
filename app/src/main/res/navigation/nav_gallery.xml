@@ -8,5 +8,19 @@
         android:id="@+id/galleryFragment"
         android:name="com.ml.photosearchapp.ui.gallery.GalleryFragment"
         android:label="GalleryFragment"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/toDetailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ml.photosearchapp.ui.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="results"
+            app:argType="com.ml.photosearchapp.domain.Results" />
+    </fragment>
 </navigation>
